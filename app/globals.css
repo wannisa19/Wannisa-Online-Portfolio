@@ -58,3 +58,33 @@ body {
 .glow-indigo {
   box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
 }
+
+/* Centering fallbacks — ensures layout works even if Tailwind utilities are not compiled */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

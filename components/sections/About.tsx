@@ -35,7 +35,7 @@ export default function About() {
         style={{ background: "linear-gradient(180deg, transparent, #06b6d4)" }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" style={{ maxWidth: '72rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}>
         <motion.div {...anim(0)} className="text-center mb-16">
           <span
             className="text-xs font-semibold tracking-[0.2em] uppercase mb-3 block"
