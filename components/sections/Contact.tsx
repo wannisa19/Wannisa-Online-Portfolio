@@ -1,7 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { useRef, useState } from "react";
 
 const contactInfo = [
   {
@@ -30,13 +30,19 @@ const contactInfo = [
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${formData.name}`,
+    );
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
     );
     window.open(`mailto:Wannisaf19@gmail.com?subject=${subject}&body=${body}`);
   };
@@ -57,7 +63,16 @@ export default function Contact() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative" style={{ maxWidth: '72rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}>
+      <div
+        className="max-w-6xl mx-auto px-4 sm:px-6 relative"
+        style={{
+          maxWidth: "72rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -79,7 +94,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-1 gap-10">
           {/* Left: Contact info */}
           <div className="space-y-6">
             {contactInfo.map(({ icon: Icon, label, value, href, color }, i) => (
@@ -101,8 +116,12 @@ export default function Contact() {
                       <Icon size={20} style={{ color }} />
                     </div>
                     <div>
-                      <p className="text-slate-500 text-xs font-medium mb-0.5">{label}</p>
-                      <p className="text-white font-semibold text-sm">{value}</p>
+                      <p className="text-slate-500 text-xs font-medium mb-0.5">
+                        {label}
+                      </p>
+                      <p className="text-white font-semibold text-sm">
+                        {value}
+                      </p>
                     </div>
                     <ArrowRight
                       size={16}
@@ -119,8 +138,12 @@ export default function Contact() {
                       <Icon size={20} style={{ color }} />
                     </div>
                     <div>
-                      <p className="text-slate-500 text-xs font-medium mb-0.5">{label}</p>
-                      <p className="text-white font-semibold text-sm">{value}</p>
+                      <p className="text-slate-500 text-xs font-medium mb-0.5">
+                        {label}
+                      </p>
+                      <p className="text-white font-semibold text-sm">
+                        {value}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -134,15 +157,20 @@ export default function Contact() {
               transition={{ delay: 0.5, duration: 0.5 }}
               className="rounded-2xl p-6 text-center"
               style={{
-                background: "linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.08))",
+                background:
+                  "linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.08))",
                 border: "1px solid rgba(6,182,212,0.15)",
               }}
             >
-              <p className="text-slate-300 text-sm mb-3">Prefer a direct reach?</p>
+              <p className="text-slate-300 text-sm mb-3">
+                Prefer a direct reach?
+              </p>
               <a
                 href="mailto:Wannisaf19@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105"
-                style={{ background: "linear-gradient(135deg, #06b6d4, #6366f1)" }}
+                style={{
+                  background: "linear-gradient(135deg, #06b6d4, #6366f1)",
+                }}
               >
                 <Mail size={15} />
                 Send Email Directly
@@ -151,7 +179,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Contact form */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -244,7 +272,7 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
@@ -260,7 +288,8 @@ export default function Contact() {
           style={{ background: "rgba(255,255,255,0.06)" }}
         />
         <p>
-          &copy; {new Date().getFullYear()} Wannisa Klomchoho · Built with Next.js &amp; Framer Motion
+          &copy; {new Date().getFullYear()} Wannisa Klomchoho · Built with
+          Next.js &amp; Framer Motion
         </p>
       </motion.div>
     </section>

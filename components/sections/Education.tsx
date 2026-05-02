@@ -1,7 +1,7 @@
 "use client";
-import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Star, BookOpen, Award } from "lucide-react";
+import { Award, BookOpen, GraduationCap, Star, University } from "lucide-react";
+import { useRef } from "react";
 
 const highlights = [
   {
@@ -17,7 +17,7 @@ const highlights = [
     color: "#6366f1",
   },
   {
-    icon: Star,
+    icon: University,
     title: "Thammasat University",
     desc: "One of Thailand's top-ranked universities, Faculty of Science & Technology.",
     color: "#8b5cf6",
@@ -35,7 +35,16 @@ export default function Education() {
       className="py-24 relative"
       style={{ background: "#070f1f" }}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6" style={{ maxWidth: '64rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}>
+      <div
+        className="max-w-5xl mx-auto px-4 sm:px-6"
+        style={{
+          maxWidth: "64rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -49,7 +58,8 @@ export default function Education() {
             Academic Background
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Education &amp; <span className="gradient-text">Certifications</span>
+            Education &amp;{" "}
+            <span className="gradient-text">Certifications</span>
           </h2>
         </motion.div>
 
@@ -96,7 +106,9 @@ export default function Education() {
               <h3 className="text-white text-xl font-bold mb-1">
                 Bachelor of Science
               </h3>
-              <p className="text-cyan-400 font-semibold mb-1">Computer Science</p>
+              <p className="text-cyan-400 font-semibold mb-1">
+                Computer Science
+              </p>
               <p className="text-slate-400 text-sm mb-4">
                 Faculty of Science and Technology
               </p>
@@ -136,8 +148,12 @@ export default function Education() {
                   <Icon size={18} style={{ color }} />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">{title}</h4>
-                  <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
+                  <h4 className="text-white font-semibold text-sm mb-1">
+                    {title}
+                  </h4>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    {desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -151,7 +167,8 @@ export default function Education() {
               style={{ border: "1px dashed rgba(255,255,255,0.08)" }}
             >
               <p className="text-slate-500 text-xs text-center">
-                Continuously learning — currently exploring cloud architecture &amp; advanced TypeScript patterns.
+                Continuously learning — currently exploring cloud architecture
+                &amp; advanced TypeScript patterns.
               </p>
             </motion.div>
           </div>

@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { ArrowDown, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowDown, BookSearch, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -76,7 +76,9 @@ export default function Hero() {
             />
             <div
               className="relative rounded-full p-[3px]"
-              style={{ background: "linear-gradient(135deg, #06b6d4, #6366f1)" }}
+              style={{
+                background: "linear-gradient(135deg, #06b6d4, #6366f1)",
+              }}
             >
               <div className="rounded-full overflow-hidden w-36 h-36 sm:w-44 sm:h-44">
                 <Image
@@ -103,6 +105,7 @@ export default function Hero() {
             background: "rgba(6,182,212,0.1)",
             border: "1px solid rgba(6,182,212,0.3)",
             color: "#06b6d4",
+            marginTop: "1rem",
           }}
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -147,8 +150,9 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75, duration: 0.5 }}
           className="flex items-center justify-center gap-2 text-slate-500 text-sm mb-10"
+          style={{ marginTop: "10px" }}
         >
-          <MapPin size={14} />
+          <MapPin size={16} />
           <span>Chonburi, Thailand</span>
         </motion.div>
 
@@ -169,21 +173,39 @@ export default function Hero() {
             style={{
               background: "linear-gradient(135deg, #06b6d4, #6366f1)",
               boxShadow: "0 0 30px rgba(6,182,212,0.25)",
+              marginTop: "1rem",
             }}
           >
             View My Work
           </button>
           <a
+            onClick={() =>
+              document
+                .getElementById("skills")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white transition-all duration-200 hover:scale-105 cursor-pointer"
+            style={{
+              border: "1px solid rgba(6,182,212,0.4)",
+              background: "rgba(6,182,212,0.05)",
+              marginTop: "1rem",
+            }}
+          >
+            <BookSearch size={16} />
+            View My Skills
+          </a>
+          {/* <a
             href="mailto:Wannisaf19@gmail.com"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white transition-all duration-200 hover:scale-105 cursor-pointer"
             style={{
               border: "1px solid rgba(6,182,212,0.4)",
               background: "rgba(6,182,212,0.05)",
+              marginTop: "1rem",
             }}
           >
             <Mail size={16} />
             Get In Touch
-          </a>
+          </a> */}
         </motion.div>
 
         {/* Tech stack badges */}
@@ -193,21 +215,29 @@ export default function Hero() {
           transition={{ delay: 1, duration: 0.5 }}
           className="mt-12 flex flex-wrap justify-center gap-2"
         >
-          {["Vue.js", "React.js", "Next.js", "TypeScript", "C# .NET", "SQL"].map(
-            (tech, i) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 rounded-full text-xs font-medium"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#94a3b8",
-                }}
-              >
-                {tech}
-              </span>
-            )
-          )}
+          {[
+            "Vue.js",
+            "React.js",
+            "Next.js",
+            "JavaScript",
+            "TypeScript",
+            "C# .NET",
+            "MVC",
+            "SQL",
+          ].map((tech, i) => (
+            <span
+              key={tech}
+              className="px-3 py-1.5 rounded-full text-xs font-medium"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                color: "#94a3b8",
+                marginTop: "1rem",
+              }}
+            >
+              {tech}
+            </span>
+          ))}
         </motion.div>
       </div>
 

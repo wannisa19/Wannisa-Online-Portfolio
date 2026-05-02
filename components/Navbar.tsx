@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Code2, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -32,7 +32,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-40% 0px -50% 0px" }
+      { rootMargin: "-40% 0px -50% 0px" },
     );
 
     navLinks.forEach(({ href }) => {
@@ -71,7 +71,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
         >
           <Code2 className="w-5 h-5 text-cyan-400" strokeWidth={2} />
-          <span className="gradient-text">WK</span>
+          <span className="gradient-text">Frame</span>
         </motion.button>
 
         {/* Desktop nav */}
@@ -122,7 +122,10 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             className="md:hidden border-t border-white/[0.06] overflow-hidden"
-            style={{ background: "rgba(5,13,26,0.97)", backdropFilter: "blur(20px)" }}
+            style={{
+              background: "rgba(5,13,26,0.97)",
+              backdropFilter: "blur(20px)",
+            }}
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map(({ label, href }, i) => (
@@ -140,7 +143,9 @@ export default function Navbar() {
               <a
                 href="mailto:Wannisaf19@gmail.com"
                 className="mt-2 px-4 py-3 rounded-lg text-sm font-semibold text-white text-center"
-                style={{ background: "linear-gradient(135deg, #06b6d4, #6366f1)" }}
+                style={{
+                  background: "linear-gradient(135deg, #06b6d4, #6366f1)",
+                }}
               >
                 Hire Me
               </a>

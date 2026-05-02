@@ -1,7 +1,7 @@
 "use client";
-import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Briefcase, Calendar, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const experiences = [
   {
@@ -98,7 +98,10 @@ function ExperienceCard({ exp, index }: { exp: Exp; index: number }) {
               {exp.current && (
                 <span
                   className="px-2 py-0.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(6,182,212,0.15)", color: "#06b6d4" }}
+                  style={{
+                    background: "rgba(6,182,212,0.15)",
+                    color: "#06b6d4",
+                  }}
                 >
                   Current
                 </span>
@@ -106,7 +109,9 @@ function ExperienceCard({ exp, index }: { exp: Exp; index: number }) {
             </div>
             <div className="flex items-center gap-2">
               <Briefcase size={13} style={{ color: exp.color }} />
-              <span className="text-slate-300 font-medium text-sm">{exp.company}</span>
+              <span className="text-slate-300 font-medium text-sm">
+                {exp.company}
+              </span>
               <span className="text-slate-600 text-xs">·</span>
               <span className="text-slate-500 text-xs">{exp.type}</span>
             </div>
@@ -120,8 +125,14 @@ function ExperienceCard({ exp, index }: { exp: Exp; index: number }) {
         <ul className="space-y-2.5">
           {exp.bullets.map((bullet, j) => (
             <li key={j} className="flex items-start gap-2.5">
-              <ChevronRight size={14} className="mt-0.5 shrink-0" style={{ color: exp.color }} />
-              <span className="text-slate-400 text-sm leading-relaxed">{bullet}</span>
+              <ChevronRight
+                size={14}
+                className="mt-0.5 shrink-0"
+                style={{ color: exp.color }}
+              />
+              <span className="text-slate-400 text-sm leading-relaxed">
+                {bullet}
+              </span>
             </li>
           ))}
         </ul>
@@ -139,9 +150,20 @@ export default function Experience() {
       id="experience"
       ref={ref}
       className="py-24 relative"
-      style={{ background: "linear-gradient(180deg, #070f1f 0%, #050d1a 100%)" }}
+      style={{
+        background: "linear-gradient(180deg, #070f1f 0%, #050d1a 100%)",
+      }}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6" style={{ maxWidth: '64rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}>
+      <div
+        className="max-w-5xl mx-auto px-4 sm:px-6"
+        style={{
+          maxWidth: "64rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -154,7 +176,7 @@ export default function Experience() {
           >
             Career Path
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white py-3">
             Work <span className="gradient-text">Experience</span>
           </h2>
         </motion.div>

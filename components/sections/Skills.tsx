@@ -1,14 +1,7 @@
 "use client";
-import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  Globe,
-  Server,
-  Database,
-  Palette,
-  Code,
-  Layers,
-} from "lucide-react";
+import { Code, Database, Globe, Layers, Palette, Server } from "lucide-react";
+import { useRef } from "react";
 
 const skillGroups = [
   {
@@ -73,7 +66,17 @@ const skillGroups = [
   },
 ];
 
-function SkillBar({ name, level, color, delay }: { name: string; level: number; color: string; delay: number }) {
+function SkillBar({
+  name,
+  level,
+  color,
+  delay,
+}: {
+  name: string;
+  level: number;
+  color: string;
+  delay: number;
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -81,7 +84,9 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
     <div ref={ref} className="space-y-1.5">
       <div className="flex justify-between items-center">
         <span className="text-slate-300 text-sm font-medium">{name}</span>
-        <span className="text-xs font-semibold" style={{ color }}>{level}%</span>
+        <span className="text-xs font-semibold" style={{ color }}>
+          {level}%
+        </span>
       </div>
       <div
         className="h-1.5 rounded-full overflow-hidden"
@@ -110,7 +115,16 @@ export default function Skills() {
       className="py-24 relative"
       style={{ background: "#070f1f" }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6" style={{ maxWidth: '72rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}>
+      <div
+        className="max-w-6xl mx-auto px-4 sm:px-6"
+        style={{
+          maxWidth: "72rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +137,7 @@ export default function Skills() {
           >
             What I Work With
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white py-3">
             Technical <span className="gradient-text">Skills</span>
           </h2>
         </motion.div>
@@ -134,7 +148,11 @@ export default function Skills() {
               key={label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: groupIdx * 0.08, duration: 0.5, ease: "easeOut" }}
+              transition={{
+                delay: groupIdx * 0.08,
+                duration: 0.5,
+                ease: "easeOut",
+              }}
               className="glass-card rounded-2xl p-6 group hover:border-white/[0.12] transition-all duration-300"
             >
               {/* Card header */}
@@ -171,11 +189,17 @@ export default function Skills() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-12 text-center"
         >
-          <p className="text-slate-500 text-sm mb-4">Also familiar with</p>
+          <p className="text-slate-500 text-sm mb-4 py-3">Also familiar with</p>
           <div className="flex flex-wrap justify-center gap-2">
             {[
-              "Git", "REST APIs", "Agile", "MVC Pattern", "Code Review",
-              "Database Design", "UI/UX Principles", "Cross-browser Compatibility",
+              "Git",
+              "REST APIs",
+              "Agile",
+              "MVC Pattern",
+              "Code Review",
+              "Database Design",
+              "UI/UX Principles",
+              "Cross-browser Compatibility",
             ].map((tag) => (
               <span
                 key={tag}
