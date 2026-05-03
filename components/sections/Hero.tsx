@@ -173,7 +173,6 @@ export default function Hero() {
             style={{
               background: "linear-gradient(135deg, #06b6d4, #6366f1)",
               boxShadow: "0 0 30px rgba(6,182,212,0.25)",
-              marginTop: "1rem",
             }}
           >
             View My Work
@@ -188,7 +187,6 @@ export default function Hero() {
             style={{
               border: "1px solid rgba(6,182,212,0.4)",
               background: "rgba(6,182,212,0.05)",
-              marginTop: "1rem",
             }}
           >
             <BookSearch size={16} />
@@ -232,7 +230,7 @@ export default function Hero() {
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 color: "#94a3b8",
-                marginTop: "1rem",
+                // marginTop: "1rem",
               }}
             >
               {tech}
