@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-5"
         >
           <div className="relative">
             <div
@@ -105,7 +105,7 @@ export default function Hero() {
             background: "rgba(6,182,212,0.1)",
             border: "1px solid rgba(6,182,212,0.3)",
             color: "#06b6d4",
-            marginTop: "1rem",
+            marginTop: "0.5rem",
           }}
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -128,7 +128,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.5 }}
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-5"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
         >
           <span className="gradient-text">Full Stack Developer</span>
         </motion.h2>
@@ -138,7 +138,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.5 }}
-          className="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto mb-3 leading-relaxed"
+          className="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto mb-2 leading-relaxed"
         >
           ~5 years of hands-on experience crafting web applications and business
           systems — delivering high-quality, scalable solutions.
@@ -149,7 +149,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75, duration: 0.5 }}
-          className="flex items-center justify-center gap-2 text-slate-500 text-sm mb-10"
+          className="flex items-center justify-center gap-2 text-slate-500 text-sm mb-5"
           style={{ marginTop: "10px" }}
         >
           <MapPin size={16} />
@@ -211,7 +211,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="mt-12 flex flex-wrap justify-center gap-2"
+          className="mt-5 flex flex-wrap justify-center gap-2"
         >
           {[
             "Vue.js",
@@ -230,7 +230,6 @@ export default function Hero() {
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 color: "#94a3b8",
-                // marginTop: "1rem",
               }}
             >
               {tech}
@@ -245,7 +244,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-cyan-400 transition-colors cursor-pointer"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 hover:text-cyan-400 transition-colors cursor-pointer"
         aria-label="Scroll down"
       >
         <span className="text-xs tracking-widest uppercase">Scroll</span>
